@@ -1,413 +1,131 @@
-/* ============================================================
-   ABOUT — Portrait, Bio & Credentials
-   Bhavuk Deshmukh Portfolio — Phase 2 responsive overhaul
-   ============================================================
-   CHANGES vs original:
-   • 2 → 1 column split layout on tablet
-   • Portrait image scales and centres on mobile
-   • Floating decorative objects hidden on mobile
-   • Credential cards stack on phone
-   • Every existing desktop rule preserved verbatim
-   ============================================================ */
-
-/* ──────────────────────────────────────────────
-   1. SECTION
-   ────────────────────────────────────────────── */
+/* src/styles/about.css */
+/* ══════════════════════════════════════════════════════════════
+   About Section
+   ══════════════════════════════════════════════════════════════ */
 
 .about-section {
-  position: relative;
-  overflow: hidden;
-}
-
-/* ──────────────────────────────────────────────
-   2. SPLIT LAYOUT (image + text)
-   ────────────────────────────────────────────── */
-
-.about-split {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 64px;
+  grid-template-columns: .92fr 1fr;
   align-items: center;
-}
-
-/* ──────────────────────────────────────────────
-   3. PORTRAIT IMAGE
-   ────────────────────────────────────────────── */
-
-.about-image-wrapper {
-  position: relative;
+  gap: 88px;
+  padding-top: 119px;
 }
 
 .about-image {
-  width: 100%;
-  max-width: 420px;
-  aspect-ratio: 3 / 4;
-  border-radius: var(--radius-2xl);
-  overflow: hidden;
   position: relative;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-subtle);
-  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--border);
+  border-radius: 15px;
+  aspect-ratio: .95;
+  background: #141713;
+  overflow: hidden;
 }
 
-.about-image img {
+.about-image > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
-  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 14px;
+  transition: transform .5s var(--ease);
 }
 
-.about-image:hover img {
-  transform: scale(1.04);
+.about-image:hover > img {
+  transform: scale(1.03);
 }
 
-/* Decorative frame behind image */
-.about-image-frame {
+.portrait-caption {
   position: absolute;
-  inset: -12px;
-  border-radius: var(--radius-2xl);
-  border: 2px solid var(--accent-primary);
-  opacity: 0.15;
-  z-index: -1;
-}
-
-/* Floating decorative objects near portrait */
-.about-float-object {
-  position: absolute;
-  z-index: 2;
-  pointer-events: none;
-}
-
-.about-float-object--1 {
-  top: -16px;
-  right: -20px;
-  width: 56px;
-  height: 56px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.06));
-  border: 1px solid rgba(99, 102, 241, 0.15);
-  animation: float-slow 9s ease-in-out infinite;
-}
-
-.about-float-object--2 {
-  bottom: 40px;
-  left: -24px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, rgba(34, 197, 94, 0.12), rgba(34, 197, 94, 0.04));
-  border: 1px solid rgba(34, 197, 94, 0.12);
-  animation: float-slow 11s ease-in-out infinite reverse;
-}
-
-/* ──────────────────────────────────────────────
-   4. ABOUT TEXT CONTENT
-   ────────────────────────────────────────────── */
-
-.about-content {
+  bottom: 20px;
+  left: 20px;
   display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-.about-eyebrow {
-  display: inline-flex;
   align-items: center;
   gap: 8px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent-tertiary);
+  color: #b9c3ae;
+  font-size: 8px;
+  letter-spacing: .07em;
+  padding: 11px 13px;
+  border: 1px solid #ffffff14;
+  border-radius: 6px;
+  background: #111111e8;
+  z-index: 2;
 }
 
-.about-eyebrow::before {
-  content: '';
-  width: 24px;
-  height: 1px;
-  background: var(--accent-primary);
-  opacity: 0.5;
-}
-
-.about-title {
-  font-size: clamp(1.75rem, 3vw + 0.5rem, 2.5rem);
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: -0.03em;
-  color: var(--text-primary);
-}
-
-.about-bio {
-  font-size: 1.05rem;
-  line-height: 1.75;
-  color: var(--text-secondary);
-}
-
-.about-bio strong {
-  color: var(--text-primary);
-  font-weight: 600;
-}
-
-.about-bio .text-gradient {
-  font-weight: 700;
-}
-
-/* ──────────────────────────────────────────────
-   5. QUICK STATS ROW
-   ────────────────────────────────────────────── */
-
-.about-stats {
-  display: flex;
-  gap: 32px;
-  padding-top: 24px;
-  border-top: 1px solid var(--border-subtle);
-  margin-top: 8px;
-}
-
-.about-stat {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.about-stat-value {
-  font-size: 1.75rem;
-  font-weight: 800;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
-  line-height: 1.2;
-}
-
-.about-stat-value .text-gradient {
-  font-weight: 800;
-}
-
-.about-stat-label {
-  font-size: 0.82rem;
-  color: var(--text-tertiary);
-  font-weight: 500;
-}
-
-/* ──────────────────────────────────────────────
-   6. CREDENTIAL CARDS (below split)
-   ────────────────────────────────────────────── */
-
-.about-credentials {
+.about-floating {
+  position: absolute;
+  top: 42px;
+  right: -24px;
+  width: 72px;
+  height: 72px;
+  border-radius: 17px;
+  color: #c3ccb9;
+  background: #293226;
+  border: 1px solid #65795950;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  box-shadow: 4px 8px 0 #1b221a, 7px 19px 25px #0005;
+  z-index: 2;
+}
+
+/* ── About Copy ──────────────────────────────────────────────── */
+
+.about-copy h2 {
+  font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
+}
+
+.about-copy > p {
+  font-size: 15px;
+  max-width: 58ch;
+  margin-top: 17px;
+  line-height: 1.75;
+}
+
+.about-copy .about-intro {
+  font-size: 17px;
+  color: #d3d6cc;
+  margin-top: 28px;
+}
+
+.about-signature {
+  margin-top: 23px;
+  margin-bottom: 28px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px;
+}
+
+.about-signature > span:first-child {
+  font-size: 24px;
+  font-weight: 500;
+  letter-spacing: -.03em;
+}
+
+.availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 9px;
+  color: #b5c7af;
+  padding: 7px 10px;
+  border: 1px solid #54b97829;
+  border-radius: 20px;
+  background: #54b97808;
+}
+
+.social-links {
+  display: flex;
   gap: 20px;
-  margin-top: 64px;
+  flex-wrap: wrap;
+  margin-top: 24px;
 }
 
-.about-credential {
-  padding: 24px 20px;
-  border-radius: var(--radius-lg);
-  background: var(--bg-secondary);
-  border: 1px solid var(--border-subtle);
-  transition:
-    transform var(--transition-base),
-    border-color var(--transition-base),
-    box-shadow var(--transition-base);
-}
-
-.about-credential:hover {
-  transform: translateY(-3px);
-  border-color: var(--border-medium);
-  box-shadow: var(--shadow-md);
-}
-
-.about-credential-icon {
-  width: 40px;
-  height: 40px;
-  border-radius: var(--radius-md);
-  background: rgba(99, 102, 241, 0.1);
-  border: 1px solid rgba(99, 102, 241, 0.15);
+.social-links a {
   display: flex;
   align-items: center;
-  justify-content: center;
-  color: var(--accent-tertiary);
-  margin-bottom: 16px;
+  gap: 6px;
+  color: var(--muted);
+  font-size: 11px;
 }
 
-.about-credential-icon svg {
-  width: 20px;
-  height: 20px;
-}
-
-.about-credential-title {
-  font-size: 1rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  margin-bottom: 6px;
-  line-height: 1.3;
-}
-
-.about-credential-text {
-  font-size: 0.88rem;
-  line-height: 1.55;
-  color: var(--text-secondary);
-}
-
-/* ──────────────────────────────────────────────
-   7. RESPONSIVE — About
-   ────────────────────────────────────────────── */
-
-/* Medium desktop */
-@media (max-width: 1200px) {
-  .about-split {
-    gap: 48px;
-  }
-  .about-image {
-    max-width: 360px;
-  }
-  .about-credentials {
-    margin-top: 48px;
-  }
-}
-
-/* Tablet landscape */
-@media (max-width: 1024px) {
-  .about-split {
-    gap: 40px;
-  }
-  .about-image {
-    max-width: 320px;
-  }
-  .about-float-object {
-    display: none;
-  }
-  .about-credentials {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-}
-
-/* Tablet portrait → stack */
-@media (max-width: 768px) {
-  .about-split {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    text-align: left;
-  }
-  .about-image-wrapper {
-    display: flex;
-    justify-content: center;
-  }
-  .about-image {
-    max-width: 280px;
-    aspect-ratio: 1 / 1;
-    border-radius: var(--radius-2xl);
-  }
-  .about-image-frame {
-    inset: -8px;
-  }
-  .about-float-object {
-    display: none;
-  }
-  .about-content {
-    gap: 16px;
-  }
-  .about-title {
-    font-size: clamp(1.5rem, 5vw, 2rem);
-  }
-  .about-bio {
-    font-size: 0.95rem;
-  }
-  .about-stats {
-    gap: 24px;
-    flex-wrap: wrap;
-  }
-  .about-stat-value {
-    font-size: 1.4rem;
-  }
-  .about-credentials {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
-    margin-top: 36px;
-  }
-  .about-credential {
-    padding: 20px 16px;
-  }
-}
-
-/* Phone → 1 col credentials */
-@media (max-width: 560px) {
-  .about-split {
-    gap: 24px;
-  }
-  .about-image {
-    max-width: 220px;
-    aspect-ratio: 1 / 1;
-  }
-  .about-stats {
-    gap: 16px;
-  }
-  .about-stat-value {
-    font-size: 1.25rem;
-  }
-  .about-stat-label {
-    font-size: 0.78rem;
-  }
-  .about-credentials {
-    grid-template-columns: 1fr;
-    gap: 12px;
-    margin-top: 28px;
-    max-width: 400px;
-  }
-  .about-credential {
-    display: flex;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 16px;
-  }
-  .about-credential-icon {
-    margin-bottom: 0;
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-  }
-  .about-credential-icon svg {
-    width: 18px;
-    height: 18px;
-  }
-}
-
-/* Small phone */
-@media (max-width: 480px) {
-  .about-image {
-    max-width: 180px;
-  }
-  .about-title {
-    font-size: clamp(1.35rem, 6vw, 1.7rem);
-  }
-  .about-bio {
-    font-size: 0.9rem;
-    line-height: 1.65;
-  }
-  .about-stats {
-    gap: 12px;
-  }
-  .about-stat-value {
-    font-size: 1.1rem;
-  }
-  .about-credential {
-    padding: 14px 12px;
-    gap: 12px;
-  }
-}
-
-/* Touch devices */
-@media (hover: none) {
-  .about-image:hover img {
-    transform: none;
-  }
-  .about-credential:hover {
-    transform: none;
-    box-shadow: none;
-  }
-  .about-credential:active {
-    transform: scale(0.98);
-    border-color: var(--accent-primary);
-  }
+.social-links a:hover {
+  color: var(--accent);
 }

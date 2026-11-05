@@ -3,11 +3,9 @@
    Spec: DESIGN.md §8 — small, attractive, dense
    ============================================ */
 
-
 .work-section {
   padding: 100px 0;
 }
-
 
 .work-heading {
   display: flex;
@@ -18,11 +16,9 @@
   flex-wrap: wrap;
 }
 
-
 .work-heading > div {
   max-width: 640px;
 }
-
 
 .section-side-note {
   display: inline-flex;
@@ -35,7 +31,6 @@
   text-transform: uppercase;
 }
 
-
 /* ══════════════════════════════════════════════
    COMPACT GRID — 4 cols desktop, dense
    ══════════════════════════════════════════════ */
@@ -45,21 +40,12 @@
   gap: 20px;
 }
 
-
-@media (min-width: 1401px) {
-  .projects-grid-compact {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-
-
 @media (max-width: 1400px) {
   .projects-grid-compact {
     grid-template-columns: repeat(3, 1fr);
     gap: 18px;
   }
 }
-
 
 @media (max-width: 900px) {
   .projects-grid-compact {
@@ -68,14 +54,12 @@
   }
 }
 
-
 @media (max-width: 560px) {
   .projects-grid-compact {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 }
-
 
 /* ══════════════════════════════════════════════
    PROJECT ITEM (card + caption below)
@@ -85,7 +69,6 @@
   flex-direction: column;
   gap: 12px;
 }
-
 
 /* ── CARD (compact, 4:3 aspect) ── */
 .project-card {
@@ -110,7 +93,6 @@
   will-change: transform;
 }
 
-
 .project-card:hover {
   transform: perspective(900px) rotateX(var(--tilt-x, 0deg)) rotateY(var(--tilt-y, 0deg)) translateY(-4px);
   border-color: rgba(255, 255, 255, 0.14);
@@ -119,12 +101,10 @@
     0 0 0 1px rgba(84, 185, 120, 0.12);
 }
 
-
 .project-card:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
 }
-
 
 .project-card img {
   width: 100%;
@@ -134,11 +114,9 @@
   transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
 .project-card:hover img {
   transform: scale(1.04);
 }
-
 
 /* ══════════════════════════════════════════════
    UNIFIED BADGE ROW (top-left, single line)
@@ -153,7 +131,6 @@
   flex-wrap: wrap;
   z-index: 3;
 }
-
 
 .project-badge-compact {
   display: inline-flex;
@@ -174,24 +151,20 @@
   white-space: nowrap;
 }
 
-
 .project-badge-compact.is-personal {
   color: var(--text-soft);
 }
-
 
 .project-badge-compact.is-demo {
   color: var(--accent);
   border-color: rgba(84, 185, 120, 0.3);
 }
 
-
 .project-badge-compact.is-live {
   background: rgba(84, 185, 120, 0.18);
   color: var(--accent);
   border-color: rgba(84, 185, 120, 0.35);
 }
-
 
 .live-dot {
   width: 5px;
@@ -202,12 +175,10 @@
   animation: live-pulse 2s infinite;
 }
 
-
 @keyframes live-pulse {
   0%, 100% { opacity: 1; transform: scale(1); }
   50% { opacity: 0.5; transform: scale(0.85); }
 }
-
 
 /* ══════════════════════════════════════════════
    HOVER OVERLAY (compact, bottom)
@@ -229,11 +200,9 @@
   pointer-events: none;
 }
 
-
 .project-card:hover .project-hover-compact {
   opacity: 1;
 }
-
 
 .project-hover-compact span {
   display: inline-flex;
@@ -250,11 +219,9 @@
   transition: transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-
 .project-card:hover .project-hover-compact span {
   transform: translateY(0);
 }
-
 
 /* ══════════════════════════════════════════════
    CAPTION UNDER CARD (compact)
@@ -262,7 +229,6 @@
 .project-caption-compact {
   padding: 2px 2px 0;
 }
-
 
 .project-caption-compact h3 {
   font-size: 15px;
@@ -272,7 +238,6 @@
   color: var(--text);
   margin: 0 0 3px;
 }
-
 
 .project-caption-compact p {
   font-size: 12px;
@@ -285,140 +250,9 @@
   overflow: hidden;
 }
 
-
 /* ── Hide any touch-device duplicates ── */
 @media (hover: none) {
   .project-hover-compact {
     display: none;
   }
-}
-
-
-/* ══════════════════════════════════════════════
-   PER-PROJECT HOVER GLOW ACCENTS
-   Matches the --project-color set on each card
-   ══════════════════════════════════════════════ */
-
-
-/* ── Smile Jobs golden glow (#fbbf24) ── */
-.project-card[style*="#fbbf24"]::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 100%,
-    rgba(251, 191, 36, 0.20) 0%,
-    rgba(251, 191, 36, 0.06) 40%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 2;
-  border-radius: inherit;
-}
-
-.project-card[style*="#fbbf24"]:hover::before {
-  opacity: 1;
-}
-
-.project-card[style*="#fbbf24"]:hover {
-  border-color: rgba(251, 191, 36, 0.28);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(251, 191, 36, 0.25),
-    0 0 60px rgba(251, 191, 36, 0.12);
-}
-
-
-/* ── UWe Home Services warm glow (#f39a42) ── */
-.project-card[style*="#f39a42"]::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 100%,
-    rgba(243, 154, 66, 0.18) 0%,
-    rgba(243, 154, 66, 0.05) 40%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 2;
-  border-radius: inherit;
-}
-
-.project-card[style*="#f39a42"]:hover::before {
-  opacity: 1;
-}
-
-.project-card[style*="#f39a42"]:hover {
-  border-color: rgba(243, 154, 66, 0.28);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(243, 154, 66, 0.22),
-    0 0 50px rgba(243, 154, 66, 0.10);
-}
-
-
-/* ── UWe Partner blue glow (#3b82f6) ── */
-.project-card[style*="#3b82f6"]::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 100%,
-    rgba(59, 130, 246, 0.18) 0%,
-    rgba(59, 130, 246, 0.05) 40%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 2;
-  border-radius: inherit;
-}
-
-.project-card[style*="#3b82f6"]:hover::before {
-  opacity: 1;
-}
-
-.project-card[style*="#3b82f6"]:hover {
-  border-color: rgba(59, 130, 246, 0.28);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(59, 130, 246, 0.22),
-    0 0 50px rgba(59, 130, 246, 0.10);
-}
-
-
-/* ── UWe Admin amber glow (#f59e0b) ── */
-.project-card[style*="#f59e0b"]::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(
-    circle at 50% 100%,
-    rgba(245, 158, 11, 0.18) 0%,
-    rgba(245, 158, 11, 0.05) 40%,
-    transparent 70%
-  );
-  opacity: 0;
-  transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1);
-  pointer-events: none;
-  z-index: 2;
-  border-radius: inherit;
-}
-
-.project-card[style*="#f59e0b"]:hover::before {
-  opacity: 1;
-}
-
-.project-card[style*="#f59e0b"]:hover {
-  border-color: rgba(245, 158, 11, 0.28);
-  box-shadow:
-    0 20px 40px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(245, 158, 11, 0.22),
-    0 0 50px rgba(245, 158, 11, 0.10);
 }
