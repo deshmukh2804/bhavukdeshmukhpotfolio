@@ -1,0 +1,167 @@
+// src/data/projects/uwe-admin.ts
+import type { Project } from '../types';
+
+export const uweAdmin: Project = {
+  id: 'uwe-admin',
+  title: 'UWe Admin Panel',
+  category: 'Marketplace administration dashboard',
+  description:
+    'The command center of the UWe platform — a comprehensive admin dashboard for managing customers, partners, services, bookings, payments, KYC verification, notifications, analytics, and complete marketplace operations.',
+  longDescription:
+    'The UWe Admin Panel is the command center of the entire UWe marketplace platform. It allows business administrators to control the entire marketplace without changing application code. The dashboard provides real-time visibility into total customers, total partners, active partners, pending KYC, today\'s bookings, completed bookings, cancelled bookings, revenue, partner earnings, pending payouts, active services, and service-area statistics.',
+  image: '/images/admin penal.svg',
+  imageAlt: 'UWe Admin Panel dashboard showing customer management, booking analytics, and partner verification',
+  color: '#7c5cfc',
+  tags: ['React.js', 'Node.js', 'MongoDB', 'Redis', 'Chart.js', 'Role-Based Access', 'REST API', 'Analytics'],
+  year: '2024',
+  demo: false,
+  problemStatement:
+    'Managing a two-sided marketplace requires centralized control over customers, partners, services, bookings, payments, and operations — without requiring code changes for every business decision.',
+  solution:
+    'A comprehensive admin dashboard with role-based access control, real-time analytics, and complete management of every marketplace entity.',
+  stats: [
+    { label: 'Management Modules', value: '12', suffix: '+', description: 'Customers, partners, bookings...' },
+    { label: 'Dashboard Metrics', value: '14', suffix: '+', description: 'Real-time operational visibility' },
+    { label: 'Admin Roles', value: '5', description: 'Super, Ops, Support, Finance, Content' },
+    { label: 'Booking States', value: '7', description: 'Complete lifecycle monitoring' },
+    { label: 'Report Types', value: '10', suffix: '+', description: 'Revenue, performance, activity' },
+    { label: 'Security Layers', value: '8', suffix: '+', description: 'Auth, RBAC, rate limiting, audit' },
+  ],
+  architecture: {
+    title: 'Admin Panel Architecture',
+    description: 'Centralized control over all platform entities with role-based access.',
+    nodes: [
+      { id: 'admin-ui', label: 'Admin Dashboard', type: 'primary' },
+      { id: 'api', label: 'Backend API', type: 'primary' },
+      { id: 'auth', label: 'Auth + RBAC', type: 'secondary' },
+      { id: 'db', label: 'MongoDB', type: 'tertiary' },
+      { id: 'redis', label: 'Redis', type: 'tertiary' },
+      { id: 'rabbitmq', label: 'RabbitMQ', type: 'tertiary' },
+      { id: 'fcm', label: 'Firebase FCM', type: 'tertiary' },
+      { id: 'razorpay', label: 'Razorpay', type: 'tertiary' },
+    ],
+    connections: [
+      { from: 'admin-ui', to: 'api', label: 'REST API' },
+      { from: 'api', to: 'auth', label: 'RBAC Middleware' },
+      { from: 'api', to: 'db' },
+      { from: 'api', to: 'redis', label: 'Caching' },
+      { from: 'api', to: 'rabbitmq', label: 'Notifications' },
+      { from: 'rabbitmq', to: 'fcm' },
+      { from: 'api', to: 'razorpay', label: 'Payment Data' },
+    ],
+  },
+  flows: [
+    {
+      title: 'Role-Based Access Control',
+      steps: [
+        { label: 'Super Admin', description: 'Full platform control and configuration', status: 'complete' },
+        { label: 'Operations Admin', description: 'Bookings, partners, service management', status: 'active' },
+        { label: 'Support Admin', description: 'Customer support, complaints, tickets', status: 'pending' },
+        { label: 'Finance Admin', description: 'Payments, earnings, payouts, revenue', status: 'pending' },
+        { label: 'Content Admin', description: 'Banners, FAQs, terms, promotions', status: 'pending' },
+      ],
+    },
+    {
+      title: 'Partner Verification Workflow',
+      steps: [
+        { label: 'Partner Registers', description: 'Submits profile and documents', status: 'complete' },
+        { label: 'KYC Submitted', description: 'Documents uploaded and pending', status: 'complete' },
+        { label: 'Admin Notified', description: 'New KYC appears in dashboard', status: 'complete' },
+        { label: 'Document Review', description: 'Admin reviews identity and credentials', status: 'active' },
+        { label: 'Approve / Reject', description: 'Decision recorded with notes', status: 'pending' },
+        { label: 'Partner Activated', description: 'Partner begins receiving bookings', status: 'pending' },
+      ],
+    },
+    {
+      title: 'Booking Monitoring Pipeline',
+      steps: [
+        { label: 'All Bookings', description: 'Complete booking inventory', status: 'complete' },
+        { label: 'Pending', description: 'Awaiting partner assignment', status: 'complete' },
+        { label: 'Assigned', description: 'Partner matched to booking', status: 'active' },
+        { label: 'Accepted', description: 'Partner confirmed', status: 'pending' },
+        { label: 'In Progress', description: 'Service being delivered', status: 'pending' },
+        { label: 'Completed', description: 'Service finished', status: 'pending' },
+        { label: 'Cancelled', description: 'Booking cancelled', status: 'pending' },
+      ],
+    },
+  ],
+  featureGroups: [
+    {
+      title: 'Dashboard & Analytics',
+      icon: 'layout',
+      features: [
+        'Real-time dashboard — customers, partners, bookings, revenue',
+        'Booking volume, completion rate, and cancellation rate',
+        'Revenue analytics with daily/weekly/monthly trends',
+        'Popular services and location heatmaps',
+        'Partner performance scoring and activity metrics',
+        'Payment success rate and transaction analytics',
+      ],
+    },
+    {
+      title: 'User Management',
+      icon: 'pen',
+      features: [
+        'Customer search, filter, profile view, and account management',
+        'Partner search, KYC review, approve/reject, activate/deactivate',
+        'View booking history, payment history per user',
+        'Partner earnings, payout info, and service area management',
+        'Account suspension and status management',
+        'Bulk notification sending to customers or partners',
+      ],
+    },
+    {
+      title: 'Service & Content',
+      icon: 'layers',
+      features: [
+        'Dynamic category and service management — no code changes',
+        'Service descriptions, pricing, duration, and availability',
+        'Service area and city management',
+        'Banners, promotional content, and campaigns',
+        'FAQ, terms, privacy policy, and help content',
+        'Coupon and promotional offer creation',
+      ],
+    },
+    {
+      title: 'Financial Control',
+      icon: 'sparkles',
+      features: [
+        'Payment records and transaction history',
+        'Successful, failed, and refund tracking',
+        'Platform commission calculation',
+        'Partner earnings and payout status management',
+        'Revenue reports with export capabilities',
+        'Centralized financial control and audit trail',
+      ],
+    },
+  ],
+  techStack: [
+    { category: 'Frontend', items: ['React.js', 'Chart.js', 'Responsive Dashboard', 'Role-Based UI'] },
+    { category: 'Backend', items: ['Node.js', 'Express.js', 'RBAC Middleware', 'REST APIs'] },
+    { category: 'Database', items: ['MongoDB', 'Aggregation Pipelines', 'Audit Logs'] },
+    { category: 'Performance', items: ['Redis Caching', 'Query Optimization'] },
+    { category: 'Messaging', items: ['RabbitMQ for Bulk Notifications'] },
+    { category: 'Security', items: ['JWT Auth', 'Role-Based Access', 'Rate Limiting', 'Audit Trail'] },
+    { category: 'DevOps', items: ['Git', 'GitHub Actions', 'CI/CD'] },
+  ],
+  highlights: [
+    'Complete marketplace administration — 12+ management modules',
+    'Real-time dashboard with 14+ operational metrics',
+    'Role-based access control — Super, Operations, Support, Finance, Content',
+    'Partner KYC verification workflow with document review',
+    'Dynamic service and category management — no code deploy needed',
+    'Booking lifecycle monitoring with search, filter, and drill-down',
+    'Financial dashboard — payments, earnings, payouts, revenue reports',
+    'Bulk notification management via RabbitMQ',
+    'Content management for banners, FAQs, terms, and promotions',
+    'Complete audit trail for security and compliance',
+    'Analytics with booking trends, revenue, and partner performance',
+    'Centralized control of entire UWe marketplace operations',
+  ],
+  clientValue: [
+    'Enterprise-grade admin systems with role-based access',
+    'Business intelligence and analytics dashboard',
+    'Complete operational control without developer intervention',
+    'Scalable notification and content management',
+  ],
+};

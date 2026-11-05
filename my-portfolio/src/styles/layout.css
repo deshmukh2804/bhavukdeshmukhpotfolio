@@ -1,0 +1,68 @@
+/* src/styles/layout.css */
+/* ══════════════════════════════════════════════════════════════
+   Containers, Sections, Section Headings
+   ══════════════════════════════════════════════════════════════ */
+
+.container {
+  width: min(calc(100% - 80px), 1420px);
+  margin-inline: auto;
+}
+
+.container-wide {
+  width: min(calc(100% - 64px), 1640px);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: 96px;
+}
+
+.section-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 36px;
+  margin-bottom: 42px;
+}
+
+.section-heading > p {
+  max-width: 42ch;
+  font-size: 15px;
+  line-height: 1.7;
+  padding-bottom: 5px;
+}
+
+.section-heading.centered {
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  gap: 19px;
+}
+
+.section-heading.centered > p {
+  max-width: 600px;
+}
+
+.section-side-note {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  color: #acb0a5;
+  font-size: 9px;
+  letter-spacing: .075em;
+}
+
+.section-side-note > span:last-child {
+  display: flex;
+  flex-basis: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 24px;
+  margin-top: 8px;
+  color: #919789;
+}
+
+.section-side-note > span:last-child svg {
+  width: 12px;
+}

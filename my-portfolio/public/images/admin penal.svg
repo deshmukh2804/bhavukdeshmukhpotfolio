@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="850" viewBox="0 0 1200 850">
+  <defs><linearGradient id="chart" x2="0" y2="1"><stop stop-color="#a2c57f" stop-opacity=".25"/><stop offset="1" stop-color="#a2c57f" stop-opacity="0"/></linearGradient><pattern id="chartgrid" width="92" height="47" patternUnits="userSpaceOnUse"><path d="M0 0H92V47" stroke="#272c26" fill="none"/></pattern></defs>
+  <rect width="1200" height="850" fill="#111510"/>
+  <rect width="217" height="850" fill="#171c15"/>
+  <path d="M217 0v850" stroke="#30362b"/>
+  <g font-family="Arial,Helvetica,sans-serif">
+    <path d="M35 35h11v11H35zm15 0h11v11H50zM35 50h11v11H35zm15 0h11v11H50z" fill="#abd38a"/>
+    <text x="74" y="57" font-size="25" letter-spacing="-1" fill="#edf0e7" font-weight="700">index</text>
+    <rect x="22" y="99" width="173" height="42" rx="6" fill="#232a1e" stroke="#343e2b"/>
+    <circle cx="43" cy="120" r="11" fill="#c1caa4"/><text x="39" y="124" font-size="11" fill="#23301c">D</text>
+    <text x="65" y="125" fill="#d0d6c8" font-size="12">Demo workspace</text><path d="m174 118 4 4 4-4" stroke="#929c85" fill="none"/>
+    <text x="29" y="191" font-size="10" fill="#788470" letter-spacing="1.6">WORKSPACE</text>
+    <rect x="17" y="211" width="183" height="43" rx="6" fill="#2a3521"/>
+    <g fill="#aab59e" font-size="13"><text x="59" y="238" fill="#d9edc7">Overview</text><text x="59" y="285">Analytics</text><text x="59" y="333">Projects</text><text x="59" y="380">Reports</text><text x="59" y="427">Team members</text></g>
+    <g stroke="#869875" stroke-width="1.6" fill="none"><rect x="33" y="224" width="13" height="13" rx="2"/><path d="M33 282v-8m6 8v-15m7 15v-20M33 322h14v12H33zm4-4h6M33 367h14v14H33zm3 5h8m-8 4h6"/><circle cx="39" cy="414" r="4"/><path d="M32 427c0-9 15-9 15 0"/></g>
+    <text x="29" y="495" font-size="10" fill="#788470" letter-spacing="1.6">MANAGEMENT</text>
+    <g font-size="13" fill="#aab59e"><text x="59" y="538">Integrations</text><text x="59" y="584">Settings</text></g>
+    <g stroke="#869875" fill="none" stroke-width="1.6"><path d="M35 527v13m8-13v13m-12-9h16m-16 5h16"/><circle cx="39" cy="579" r="6"/><path d="M39 569v4m0 12v4m-10-10h4m12 0h4"/></g>
+    <rect x="21" y="670" width="175" height="99" rx="8" fill="#222b1b" stroke="#354329"/>
+    <text x="35" y="697" font-size="13" fill="#dae5cb">A clearer picture.</text><text x="35" y="718" font-size="11" fill="#8e9c80">Your business, in focus.</text>
+    <text x="35" y="747" font-size="11" fill="#b7d59c">Explore the demo ↗</text>
+    <circle cx="40" cy="809" r="14" fill="#838f75"/><text x="35" y="813" font-size="11" fill="#171c15">D</text><text x="66" y="812" font-size="12" fill="#c9d2bf">Demo account</text>
+    <text x="252" y="51" font-size="12" fill="#7f8b76">Workspace /</text><text x="332" y="51" font-size="12" fill="#d9e1d1">Overview</text>
+    <rect x="883" y="27" width="214" height="35" rx="6" fill="#1a2016" stroke="#343b2e"/>
+    <circle cx="900" cy="43" r="5" stroke="#7e8a75" fill="none"/><path d="m904 47 4 4" stroke="#7e8a75"/>
+    <text x="920" y="49" font-size="11" fill="#7e8a75">Search anything...</text><text x="1063" y="49" font-size="10" fill="#7e8a75">⌘ K</text>
+    <circle cx="1138" cy="44" r="15" fill="#26301e"/><circle cx="1138" cy="43" r="4" fill="#a5bf8d"/>
+    <path d="M217 81H1200" stroke="#292f25"/>
+    <text x="254" y="130" font-size="28" letter-spacing="-1" fill="#edf2e6">Your business. At a glance.</text>
+    <text x="254" y="155" font-size="12" fill="#8d9983">A clear view of what’s happening, and what comes next.</text>
+    <rect x="941" y="108" width="117" height="36" rx="6" stroke="#39432f" fill="#1b2216"/><text x="956" y="130" font-size="11" fill="#c0cdb3">This month ⌄</text>
+    <rect x="1070" y="108" width="98" height="36" rx="6" fill="#a9cb89"/><text x="1086" y="130" font-size="11" fill="#1e2c14">Export ↗</text>
+    <g fill="#1a2016" stroke="#303929"><rect x="254" y="188" width="212" height="122" rx="8"/><rect x="488" y="188" width="212" height="122" rx="8"/><rect x="723" y="188" width="212" height="122" rx="8"/><rect x="957" y="188" width="212" height="122" rx="8"/></g>
+    <g fill="#94a087" font-size="11"><text x="273" y="214">Total revenue</text><text x="507" y="214">Active customers</text><text x="742" y="214">Conversion rate</text><text x="976" y="214">Average order</text></g>
+    <g fill="#e4ecd9" font-size="31" letter-spacing="-1.2"><text x="273" y="257">$48,592</text><text x="507" y="257">2,481</text><text x="742" y="257">6.24%</text><text x="976" y="257">$124.80</text></g>
+    <g fill="#a0c881" font-size="10"><text x="273" y="289">↗ 18.6%</text><text x="507" y="289">↗ 12.2%</text><text x="742" y="289">↗ 2.4%</text><text x="976" y="289">↗ 8.1%</text></g>
+    <g fill="#68765e" font-size="9"><text x="329" y="289">vs. previous month</text><text x="563" y="289">vs. previous month</text><text x="792" y="289">vs. previous month</text><text x="1026" y="289">vs. previous month</text></g>
+    <rect x="254" y="332" width="612" height="276" rx="8" fill="#1a2016" stroke="#303929"/>
+    <text x="274" y="363" font-size="14" fill="#d9e5ce">Revenue performance</text><text x="705" y="361" font-size="10" fill="#b0c99b">● Revenue</text><text x="788" y="361" font-size="10" fill="#727e67">● Target</text>
+    <rect x="307" y="389" width="535" height="165" fill="url(#chartgrid)"/>
+    <g fill="#79876d" font-size="9"><text x="274" y="398">$50k</text><text x="274" y="447">$30k</text><text x="274" y="494">$10k</text><text x="286" y="546">$0</text><text x="307" y="582">01 Oct</text><text x="413" y="582">07 Oct</text><text x="529" y="582">14 Oct</text><text x="643" y="582">21 Oct</text><text x="808" y="582">31 Oct</text></g>
+    <path d="M307 545 327 536 347 540 367 521 387 527 409 507 429 515 449 496 469 502 489 483 509 488 529 463 549 475 569 463 589 471 609 452 629 455 649 444 669 455 689 438 709 444 729 430 749 443 769 420 789 427 809 408 839 396V554H307Z" fill="url(#chart)"/>
+    <path d="M307 545 327 536 347 540 367 521 387 527 409 507 429 515 449 496 469 502 489 483 509 488 529 463 549 475 569 463 589 471 609 452 629 455 649 444 669 455 689 438 709 444 729 430 749 443 769 420 789 427 809 408 839 396" fill="none" stroke="#acd18a" stroke-width="2.5" stroke-linejoin="round"/>
+    <path d="M307 535c141-61 305-62 532-134" stroke="#7a865e" stroke-width="1.5" stroke-dasharray="5 6" fill="none"/>
+    <rect x="887" y="332" width="282" height="276" rx="8" fill="#1a2016" stroke="#303929"/>
+    <text x="909" y="363" font-size="14" fill="#d9e5ce">Revenue by source</text>
+    <circle cx="1026" cy="450" r="52" fill="none" stroke="#303b27" stroke-width="15"/>
+    <circle cx="1026" cy="450" r="52" fill="none" stroke="#a5c981" stroke-width="15" stroke-dasharray="191 327" transform="rotate(-90 1026 450)"/>
+    <circle cx="1026" cy="450" r="52" fill="none" stroke="#718b59" stroke-width="15" stroke-dasharray="82 327" stroke-dashoffset="-197" transform="rotate(-90 1026 450)"/>
+    <text x="1000" y="453" font-size="20" fill="#e1e8d8">2,481</text><text x="1003" y="471" font-size="9" fill="#839375">customers</text>
+    <g font-size="10" fill="#b1c1a3"><text x="910" y="544">● Organic search</text><text x="1101" y="544">58%</text><text x="910" y="565" fill="#8a9f76">● Direct</text><text x="1101" y="565">25%</text><text x="910" y="586" fill="#687f53">● Referral</text><text x="1101" y="586">17%</text></g>
+    <rect x="254" y="630" width="915" height="192" rx="8" fill="#1a2016" stroke="#303929"/>
+    <text x="274" y="663" font-size="14" fill="#d9e5ce">Recent activity</text><text x="1074" y="663" font-size="10" fill="#a2c884">View all ↗</text>
+    <g fill="#738268" font-size="9" letter-spacing=".4"><text x="274" y="695">PROJECT</text><text x="641" y="695">STATUS</text><text x="823" y="695">CONVERSION</text><text x="1050" y="695">REVENUE</text></g>
+    <path d="M274 705H1149M274 750H1149M274 794H1149" stroke="#303929"/>
+    <g font-size="11" fill="#c3d0b7"><text x="310" y="733">Storefront redesign</text><text x="310" y="777">October campaign</text><text x="845" y="733">8.42%</text><text x="845" y="777">5.18%</text><text x="1058" y="733">$12,480</text><text x="1058" y="777">$9,240</text></g>
+    <rect x="274" y="715" width="25" height="25" rx="5" fill="#3a4730"/><rect x="274" y="759" width="25" height="25" rx="5" fill="#2d3a25"/>
+    <rect x="640" y="719" width="60" height="20" rx="10" fill="#2c4220"/><rect x="640" y="763" width="71" height="20" rx="10" fill="#303b24"/>
+    <text x="654" y="733" font-size="9" fill="#a3ca83">● Active</text><text x="651" y="777" font-size="9" fill="#a4b787">● In review</text>
+    <text x="984" y="841" font-size="8" fill="#68765e" letter-spacing="1">ORIGINAL INTERFACE CONCEPT</text>
+  </g>
+</svg>

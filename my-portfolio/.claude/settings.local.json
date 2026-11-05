@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -c ' *)",
+      "Bash(file public/images/*.jpg)",
+      "Bash(python3 *)",
+      "Bash(convert \"C:/potfolio/my-portfolio/public/images/project-uwe-partner-cover.jpg\" -resize 800x \"C:/tmp/uwe-cover.png\")"
+    ]
+  }
+}

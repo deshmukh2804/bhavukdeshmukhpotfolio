@@ -1,0 +1,146 @@
+/* src/styles/testimonials.css */
+/* ══════════════════════════════════════════════════════════════
+   Testimonials Section
+   ══════════════════════════════════════════════════════════════ */
+
+.testimonials-section {
+  padding-top: 113px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.quote-card {
+  padding: 32px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: #111;
+  transition: transform .3s;
+}
+
+.quote-card:hover {
+  transform: translateY(-3px);
+}
+
+.quote-mark {
+  color: #83a97b;
+  font-size: 64px;
+  line-height: 1;
+}
+
+.quote-card blockquote {
+  font-size: 20px;
+  line-height: 1.7;
+  margin: 8px 0 28px;
+  color: #dcdfd6;
+}
+
+.quote-card figcaption {
+  display: flex;
+  gap: 13px;
+  align-items: center;
+}
+
+.quote-card figcaption > span:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.quote-card figcaption strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.quote-card figcaption span span {
+  font-size: 10px;
+  color: var(--muted);
+}
+
+.quote-card figcaption > img,
+.quote-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.quote-avatar {
+  display: grid;
+  place-items: center;
+  background: #283023;
+  font-size: 13px;
+}
+
+/* ── Empty Testimonial State ─────────────────────────────────── */
+
+.testimonial-empty {
+  display: flex;
+  align-items: center;
+  gap: 45px;
+  padding: 45px;
+  background: #111;
+  border: 1px solid #242424;
+  border-radius: 14px;
+}
+
+.quote-empty-art {
+  flex-shrink: 0;
+  width: 145px;
+  height: 145px;
+  background: #191d17;
+  border: 1px solid #ffffff08;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: #74826c;
+  position: relative;
+}
+
+.quote-empty-art > span {
+  position: absolute;
+  right: 6px;
+  bottom: -12px;
+  font-size: 94px;
+  line-height: 1;
+  color: #a4b596;
+}
+
+.testimonial-empty h3 {
+  font-size: 31px;
+  line-height: 1.3;
+}
+
+.testimonial-empty p {
+  font-size: 12px;
+  margin-top: 17px;
+}
+
+.empty-label {
+  display: inline-block;
+  margin-top: 15px;
+  font-size: 8px;
+  letter-spacing: .075em;
+  color: #9a9f91;
+}
+
+.round-link {
+  display: grid;
+  place-items: center;
+  width: 57px;
+  height: 57px;
+  flex-shrink: 0;
+  border: 1px solid #414b39;
+  border-radius: 50%;
+  color: var(--accent);
+  margin-left: auto;
+  transition: background .2s, transform .2s;
+}
+
+.round-link:hover {
+  transform: translate(2px, -2px);
+  background: #54b9780e;
+}

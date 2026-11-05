@@ -1,0 +1,79 @@
+/* src/styles/process.css */
+/* ══════════════════════════════════════════════════════════════
+   Process Section
+   ══════════════════════════════════════════════════════════════ */
+
+.process-section {
+  padding-top: 113px;
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 13px;
+  list-style: none;
+  padding: 0;
+  margin: 54px 0 0;
+}
+
+.process-card {
+  padding: 24px 20px 26px;
+  border: 1px solid var(--border);
+  border-radius: 11px;
+  background: #111;
+  position: relative;
+  transition: border-color .3s, transform .3s;
+}
+
+.process-card:hover {
+  border-color: #465140;
+  transform: translateY(-3px);
+}
+
+.process-card:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 40px;
+  right: -14px;
+  width: 13px;
+  height: 1px;
+  background: #596154;
+  transform: scaleX(var(--line-scale, 1));
+  transform-origin: left center;
+}
+
+.process-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 40px;
+}
+
+.process-top svg {
+  color: #b2bda8;
+}
+
+.process-top > span {
+  font-size: 11px;
+  color: #8e9585;
+}
+
+.process-card h3 {
+  font-size: 21px;
+  margin-bottom: 12px;
+}
+
+.process-card p {
+  font-size: 13px;
+  line-height: 1.75;
+}
+
+.process-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 32px;
+  font-size: 10px;
+  color: #a1a597;
+}

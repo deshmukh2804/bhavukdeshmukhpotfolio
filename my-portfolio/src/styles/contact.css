@@ -1,0 +1,166 @@
+/* src/styles/contact.css */
+/* ══════════════════════════════════════════════════════════════
+   Contact Section & Premium Contact Grid
+   ══════════════════════════════════════════════════════════════ */
+
+.contact-section {
+  text-align: center;
+  padding-top: 117px;
+  padding-bottom: 120px;
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  inset: 15% -20px 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(#ffffff04 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff04 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse at center, #000, transparent 68%);
+}
+
+.contact-cross {
+  color: #53624a;
+  margin-bottom: 34px;
+}
+
+.contact-intro {
+  font-size: 9px;
+  letter-spacing: .15em;
+  margin-bottom: 22px;
+  color: #adb7a4;
+}
+
+.contact-section h2 {
+  font-size: clamp(2.5rem, 6vw + 1rem, 5.5rem);
+  line-height: 1.05;
+}
+
+.contact-description {
+  margin-top: 25px;
+  font-size: 15px;
+  margin-bottom: 48px;
+}
+
+/* ── Premium Contact Grid ────────────────────────────────────── */
+
+.contact-premium-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto 54px;
+  text-align: left;
+}
+
+.contact-premium-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 30px 24px;
+  border-radius: 14px;
+  transition: transform 0.3s var(--ease), border-color 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-premium-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(84, 185, 120, 0.28);
+  box-shadow: 0 12px 35px rgba(84, 185, 120, 0.04);
+}
+
+.premium-card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  margin-bottom: 24px;
+  transition: color 0.3s, background 0.3s, border-color 0.3s;
+}
+
+.contact-premium-card:hover .premium-card-icon {
+  background: rgba(84, 185, 120, 0.08);
+  border-color: rgba(84, 185, 120, 0.24);
+  color: var(--accent);
+}
+
+.contact-premium-card h3 {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text);
+}
+
+.contact-premium-card p {
+  font-size: 13px;
+  color: var(--muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+  flex-grow: 1;
+}
+
+.premium-card-action {
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.3s;
+}
+
+.contact-premium-card:hover .premium-card-action {
+  color: var(--accent);
+}
+
+/* ── Contact Misc ────────────────────────────────────────────── */
+
+.contact-button {
+  min-width: 225px;
+}
+
+.contact-preview-note {
+  font-size: 10px;
+  margin-top: 21px;
+}
+
+.contact-email {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 22px;
+  flex-wrap: wrap;
+}
+
+.contact-email > a {
+  font-size: 12px;
+  color: #b1b6a8;
+}
+
+.contact-email button {
+  width: 36px;
+  height: 36px;
+  border-radius: 7px;
+  background: #151515;
+  color: var(--muted);
+  display: grid;
+  place-items: center;
+}
+
+.contact-email > span {
+  font-size: 10px;
+  color: var(--accent);
+}

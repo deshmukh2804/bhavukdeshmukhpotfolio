@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uwe Services Partner | Digital Visiting Card</title>
+    <meta name="description" content="Connect with Uwe Services. Download the Partner App for order management, live tracking, and business analytics.">
+    <style>
+        :root {
+            --primary: #003366; /* Deep Navy */
+            --secondary: #00A8E8; /* Electric Blue */
+            --secondary-hover: #008ec7;
+            --bg-light: #F8FAFC;
+            --text-dark: #1E293B;
+            --text-gray: #64748B;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .card-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 400px;
+            border-radius: 24px;
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* Header Section */
+        .card-header {
+            background: var(--primary);
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--white);
+            position: relative;
+        }
+
+        /* Logo Placeholder - Replace with <img src="logo.png"> when ready */
+        .logo-box {
+            width: 80px;
+            height: 80px;
+            background: var(--white);
+            border-radius: 20px;
+            margin: 0 auto 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--primary);
+        }
+
+        .app-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .tagline {
+            font-size: 0.9rem;
+            color: #93C5FD; /* Light blue for contrast on navy */
+            font-weight: 500;
+        }
+
+        /* Body Section */
+        .card-body {
+            padding: 30px 25px;
+        }
+
+        .description {
+            text-align: center;
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .feature-item {
+            background: #F0F9FF;
+            border-radius: 12px;
+            padding: 15px 10px;
+            text-align: center;
+            transition: transform 0.2s;
+        }
+        
+        .feature-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .feature-icon {
+            font-size: 1.5rem;
+            margin-bottom: 8px;
+        }
+
+        .feature-label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+        }
+
+        /* Buttons */
+        .btn-primary {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            background-color: var(--secondary);
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 600;
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 15px;
+            transition: background-color 0.3s, transform 0.2s;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--secondary-hover);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary-group {
+            display: flex;
+            gap: 10px;
+        }
+
+        .btn-outline {
+            flex: 1;
+            background-color: var(--white);
+            border: 1px solid #E2E8F0;
+            color: var(--text-dark);
+            padding: 12px;
+            border-radius: 12px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 0.9rem;
+        }
+
+        .btn-outline:hover {
+            background-color: #F1F5F9;
+            border-color: #CBD5E1;
+        }
+
+        /* QR Code Section */
+        .qr-section {
+            margin-top: 25px;
+            text-align: center;
+            background: #F8FAFC;
+            padding: 20px;
+            border-radius: 16px;
+            border: 1px solid #E2E8F0;
+        }
+
+        .qr-container {
+            display: inline-block;
+            padding: 10px;
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .qr-text {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            margin-top: 10px;
+            font-weight: 500;
+        }
+
+        /* Footer */
+        .card-footer {
+            background: #F8FAFC;
+            padding: 20px;
+            text-align: center;
+            border-top: 1px solid #E2E8F0;
+        }
+
+        .footer-link {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+        
+        .footer-link:hover {
+            color: var(--primary);
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card-container">
+        <!-- Header -->
+        <div class="card-header">
+            <!-- 
+                TO USE YOUR LOGO:
+                Replace the div below with:
+                <img src="your-logo.png" alt="Uwe Services Logo" style="width: 100%; height: 100%; object-fit: contain;">
+            -->
+            <div class="logo-box">
+                <span class="logo-text">U</span>
+            </div>
+            
+            <h1 class="app-name">Uwe Services</h1>
+            <p class="tagline">Empowering Partners. Streamlining Services.</p>
+        </div>
+
+        <!-- Body -->
+        <div class="card-body">
+            <p class="description">
+                Manage orders, track deliveries in real-time, and grow your business with the ultimate B2B tool for logistics and service management.
+            </p>
+
+            <!-- Features -->
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">📦</div>
+                    <div class="feature-label">Order Mgmt</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🚚</div>
+                    <div class="feature-label">Live Tracking</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">📈</div>
+                    <div class="feature-label">Analytics</div>
+                </div>
+                <div class="feature-item">
+                    <div class="feature-icon">🤝</div>
+                    <div class="feature-label">Support</div>
+                </div>
+            </div>
+
+            <!-- Primary Action -->
+            <a href="https://play.google.com/store/apps/details?id=com.uweservices.partner" target="_blank" class="btn-primary">
+                📱 Download on Google Play
+            </a>
+
+            <!-- Secondary Actions -->
+            <div class="btn-secondary-group">
+                <button id="btnSaveContact" class="btn-outline">
+                    💾 Save Contact
+                </button>
+                <button id="btnToggleQR" class="btn-outline">
+                    🔳 Toggle QR
+                </button>
+            </div>
+
+            <!-- QR Code -->
+            <div id="qrSection" class="qr-section hidden">
+                <div class="qr-container">
+                    <!-- QR Code generated by JS -->
+                    <canvas id="qrCanvas"></canvas>
+                </div>
+                <p class="qr-text">Scan to Download</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer">
+            <a href="https://uweservices.com" target="_blank" class="footer-link">
+                © 2023 Uwe Services | Visit Website
+            </a>
+        </div>
+    </div>
+
+    <!-- QR Code Library (qrcodejs) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <script>
+        const playStoreUrl = "https://play.google.com/store/apps/details?id=com.uweservices.partner";
+        const qrSection = document.getElementById('qrSection');
+        const btnToggleQR = document.getElementById('btnToggleQR');
+        const btnSaveContact = document.getElementById('btnSaveContact');
+        let isQRGenerated = false;
+        let qrCodeInstance = null;
+
+        // Generate QR Code
+        function generateQR() {
+            if (isQRGenerated) return;
+            
+            const canvas = document.getElementById('qrCanvas');
+            qrCodeInstance = new QRCode(canvas, {
+                text: playStoreUrl,
+                width: 150,
+                height: 150,
+                colorDark: "#003366", // Primary Navy
+                colorLight: "#ffffff",
+                correctLevel: QRCode.CorrectLevel.H
+            });
+            isQRGenerated = true;
+        }
+
+        // Toggle QR Visibility
+        btnToggleQR.addEventListener('click', () => {
+            if (qrSection.classList.contains('hidden')) {
+                qrSection.classList.remove('hidden');
+                qrSection.classList.add('animate-fade-in');
+                generateQR();
+                btnToggleQR.textContent = "🙈 Hide QR";
+            } else {
+                qrSection.classList.add('hidden');
+                btnToggleQR.textContent = "🔳 Toggle QR";
+            }
+        });
+
+        // Download vCard
+        btnSaveContact.addEventListener('click', () => {
+            const vCardData = `BEGIN:VCARD
+VERSION:3.0
+N:Uwe Services
+FN:Uwe Services Partner App
+ORG:Uwe Services
+TITLE:B2B Logistics & Service Platform
+EMAIL;TYPE=WORK:partner@uweservices.com
+URL:${playStoreUrl}
+NOTE:Download the app to manage your partner services.
+END:VCARD`;
+
+            const blob = new Blob([vCardData], { type: 'text/vcard' });
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = 'Uwe_Services_Partner.vcf';
+            link.click();
+            URL.revokeObjectURL(url);
+        });
+    </script>
+</body>
+</html>

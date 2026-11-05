@@ -1,0 +1,103 @@
+/* src/styles/animations.css */
+/* ══════════════════════════════════════════════════════════════
+   All Keyframe Animations + Motion States
+   ══════════════════════════════════════════════════════════════ */
+
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(2deg); }
+}
+
+@keyframes cue {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(4px); }
+}
+
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@keyframes menu-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes dialog-in {
+  from { opacity: 0; transform: translateY(18px) scale(.985); filter: blur(6px); }
+  to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+}
+
+@keyframes backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes badge-pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.3); }
+}
+
+@keyframes pulse-dot {
+  0%, 100% { transform: scale(1); opacity: 0.6; }
+  50% { transform: scale(1.6); opacity: 0.2; }
+}
+
+@keyframes flow-down {
+  0% { top: -100%; }
+  100% { top: 200%; }
+}
+
+@keyframes data-pulse {
+  0%, 100% { opacity: 0.2; transform: scale(0.8); }
+  50% { opacity: 0.8; transform: scale(1.3); }
+}
+
+@keyframes step-enter {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes feat-enter {
+  to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes tag-enter {
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes active-ping {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(84, 185, 120, 0.4); }
+  50% { box-shadow: 0 0 0 8px rgba(84, 185, 120, 0); }
+}
+
+@keyframes pulse {
+  50% { opacity: 0.5; }
+}
+
+@keyframes mp-glow-pulse {
+  0%, 100% { opacity: 0.12; transform: scale(1); }
+  50% { opacity: 0.22; transform: scale(1.05); }
+}
+
+@keyframes mp-fade-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes mp-data-flow {
+  0%, 100% { opacity: 0.2; }
+  50% { opacity: 0.8; }
+}
+
+@keyframes mp-line-fill {
+  to { height: 100%; }
+}
+
+/* ── Motion Paused States ────────────────────────────────────── */
+
+.hero.is-motion-paused .floating-inner,
+.marquee.is-motion-paused .marquee-track,
+.portfolio-app.is-page-hidden .floating-inner,
+.portfolio-app.is-page-hidden .marquee-track,
+.portfolio-app.is-page-hidden .scroll-cue svg {
+  animation-play-state: paused !important;
+}

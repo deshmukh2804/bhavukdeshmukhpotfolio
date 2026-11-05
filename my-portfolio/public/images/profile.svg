@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="1100" viewBox="0 0 900 1100">
+  <defs><linearGradient id="wall" x2="0" y2="1"><stop stop-color="#282b28"/><stop offset="1" stop-color="#151915"/></linearGradient><linearGradient id="desk" x2="0" y2="1"><stop stop-color="#626553"/><stop offset="1" stop-color="#33392e"/></linearGradient><linearGradient id="light" x2="0" y2="1"><stop stop-color="#a8bb8f" stop-opacity=".3"/><stop offset="1" stop-color="#a8bb8f" stop-opacity="0"/></linearGradient><linearGradient id="metal" x2="1"><stop stop-color="#72766d"/><stop offset=".5" stop-color="#bbbfb2"/><stop offset="1" stop-color="#4b5148"/></linearGradient></defs>
+  <rect width="900" height="1100" fill="url(#wall)"/>
+  <path d="M0 195H900M0 390H900M0 585H900M225 0V720M450 0V720M675 0V720" stroke="#6e7867" stroke-opacity=".07"/>
+  <path d="m115 136 18 415H0V155Z" fill="#353c32"/><path d="m154 157 16 394h-28l-18-411Z" fill="#4c5544"/>
+  <path d="m83 164 90 34 226 502H0Z" fill="url(#light)"/>
+  <path d="M0 720 900 639v461H0Z" fill="url(#desk)"/>
+  <path d="M0 748 900 670" stroke="#7d8168" stroke-width="2"/>
+  <ellipse cx="470" cy="817" rx="219" ry="34" fill="#171e14" opacity=".4"/>
+  <rect x="245" y="359" width="488" height="321" rx="14" fill="#0d110d" stroke="#51584c" stroke-width="2"/>
+  <rect x="260" y="375" width="458" height="277" rx="4" fill="#161e17"/>
+  <rect x="260" y="375" width="458" height="21" fill="#263026"/>
+  <g fill="#5a6d53"><circle cx="274" cy="385" r="3"/><circle cx="285" cy="385" r="3"/><circle cx="296" cy="385" r="3"/></g>
+  <text x="498" y="388" text-anchor="middle" font-family="Arial,Helvetica,sans-serif" font-size="7" fill="#9cac91">portfolio / a little work in progress</text>
+  <rect x="260" y="396" width="98" height="256" fill="#1d271d"/>
+  <g fill="#6e8365" font-family="Arial,Helvetica,sans-serif" font-size="8"><text x="271" y="415">EXPLORER</text><text x="279" y="441">⌄ src</text><text x="287" y="460">↳ components</text><text x="296" y="478">App.tsx</text><text x="296" y="496">styles.css</text><text x="287" y="514">↳ motion</text><text x="296" y="532">cursor.ts</text></g>
+  <g font-family="monospace" font-size="10"><text x="373" y="437" fill="#7ba28a">const</text><text x="410" y="437" fill="#c1d4b1">createSomething</text><text x="502" y="437" fill="#809875">= () =&gt; {</text><text x="389" y="462" fill="#7ba28a">return</text><text x="437" y="462" fill="#b9cda7">(</text><text x="405" y="487" fill="#99b97f">&lt;Experience</text><text x="423" y="512" fill="#c1d4b1">craftedWith=</text><text x="496" y="512" fill="#acbe8b">"care"</text><text x="423" y="537" fill="#c1d4b1">madeFor=</text><text x="472" y="537" fill="#acbe8b">"people"</text><text x="405" y="562" fill="#99b97f">/&gt;</text><text x="389" y="587" fill="#b9cda7">);</text><text x="373" y="612" fill="#809875">};</text></g>
+  <rect x="260" y="638" width="458" height="14" fill="#32442c"/><text x="274" y="648" font-family="Arial,Helvetica,sans-serif" font-size="6" fill="#a4ba94">main* · TypeScript</text>
+  <path d="m460 680-7 87-40 20h122l-41-20-7-87Z" fill="url(#metal)"/>
+  <ellipse cx="474" cy="787" rx="70" ry="7" fill="#818776"/>
+  <path d="m306 837 224-16 38 69-263 22-50-54Z" fill="#151c14" stroke="#5a6552"/>
+  <path d="m316 844 207-16 30 48-243 20-34-32Z" fill="#394833"/>
+  <g stroke="#6d7c5d" stroke-width="2" opacity=".55"><path d="m292 854 234-18m-225 29 234-18m-223 29 232-18m-220 29 231-18m-205-42 22 49m4-50 20 47m7-49 19 47m6-49 20 47m6-49 21 47m6-49 21 47m6-49 22 47m6-49 21 46"/></g>
+  <path d="m565 829 30-3 25 46-44 5Z" fill="#617058" stroke="#859176"/><path d="m581 832 4 13" stroke="#34442a"/>
+  <ellipse cx="712" cy="823" rx="56" ry="12" fill="#1a2217" opacity=".4"/>
+  <path d="M673 739h70v73q-35 24-70 0Z" fill="#b0b297"/>
+  <ellipse cx="708" cy="739" rx="35" ry="9" fill="#d1d1b9"/><ellipse cx="708" cy="739" rx="28" ry="6" fill="#494936"/>
+  <path d="M742 751c37-7 39 48 0 42" fill="none" stroke="#aeb095" stroke-width="10"/>
+  <path d="M760 451v222m-10-117 18-18m-7 49 20-23m-20-46-22-20" stroke="#68795a" stroke-width="3"/>
+  <g fill="#465d3f"><ellipse cx="742" cy="495" rx="16" ry="42" transform="rotate(-28 742 495)"/><ellipse cx="778" cy="534" rx="15" ry="39" transform="rotate(33 778 534)"/><ellipse cx="775" cy="590" rx="16" ry="39" transform="rotate(31 775 590)"/><ellipse cx="748" cy="560" rx="12" ry="29" transform="rotate(-34 748 560)"/><ellipse cx="761" cy="470" rx="14" ry="33"/></g>
+  <path d="m730 656 60-1-8 71h-44Z" fill="#726f58"/><ellipse cx="760" cy="656" rx="30" ry="7" fill="#868168"/>
+  <path d="M98 521v207m0-167 72 34m-69-44 58 47" stroke="#292f25" stroke-width="10"/>
+  <path d="m123 507 21-53 56 25-17 57Z" fill="#535e44"/>
+  <path d="m123 507 60 29 3 12-69-33Z" fill="#b1ba97"/>
+  <ellipse cx="97" cy="735" rx="55" ry="11" fill="#2c3824"/>
+  <path d="m82 902 137-12 73 99-147 17Z" fill="#b9baa3"/><path d="m103 915 91-8m-79 27 91-8m-79 27 68-6" stroke="#838e72" stroke-width="2"/><path d="m176 909 54 76" stroke="#303f2b" stroke-width="5"/>
+  <text x="50" y="1050" font-family="Arial,Helvetica,sans-serif" font-size="11" fill="#b5bea9" letter-spacing="2">A SPACE FOR THOUGHTFUL WORK.</text>
+  <text x="50" y="1076" font-family="Arial,Helvetica,sans-serif" font-size="8" fill="#717f69" letter-spacing="1">ORIGINAL VECTOR STILL LIFE / NO PERSONAL IMAGE PROVIDED</text>
+</svg>
