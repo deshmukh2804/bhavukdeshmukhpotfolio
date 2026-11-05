@@ -40,6 +40,5 @@ coverage/
 npm-debug.log*
 
 # Misc
-*.bak
 *.tmp
 .cache/
