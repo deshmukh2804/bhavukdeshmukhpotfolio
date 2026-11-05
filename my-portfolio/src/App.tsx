@@ -23,10 +23,49 @@ import SmokeCursor from './components/SmokeCursor';
 import { usePortfolioMotion } from './hooks/usePortfolioMotion';
 import MobilePreviewPage from './components/MobilePreviewPage';
 
+/* ── Professional Email Helper ───────────────────────────────────── */
+function openEmail() {
+  const to = profile.email;
+  const subject = encodeURIComponent(
+    `Collaboration Inquiry — ${new Date().toLocaleDateString('en-US', { month: 'long', year: 'numeric' })}`
+  );
+  const body = encodeURIComponent(
+    [
+      `Dear ${profile.name.split(' ')[0]},`,
+      ``,
+      `I came across your portfolio and was impressed by your work. I'd like to explore a potential collaboration.`,
+      ``,
+      `— Project Overview —`,
+      `Project Type: [e.g., Web App / Mobile App / Landing Page / Dashboard]`,
+      `Industry: [e.g., FinTech / HealthCare / E-Commerce / SaaS]`,
+      `Brief Description: [A short summary of your project vision]`,
+      ``,
+      `— Scope & Requirements —`,
+      `Key Features: [List 2-3 core features you need]`,
+      `Design Preferences: [Any reference sites, style guides, or branding assets?]`,
+      `Target Audience: [Who are the primary users?]`,
+      ``,
+      `— Timeline & Budget —`,
+      `Estimated Timeline: [e.g., 4-6 weeks / 2-3 months / Flexible]`,
+      `Budget Range: [e.g., ₹50K-1L / $1K-5K / Open to discussion]`,
+      `Start Date: [e.g., Immediately / Next month / Specific date]`,
+      ``,
+      `— Additional Context —`,
+      `[Any other details, links, documents, or questions you'd like to share]`,
+      ``,
+      `I look forward to hearing from you and discussing how we can work together.`,
+      ``,
+      `Best regards,`,
+      `[Your Full Name]`,
+      `[Your Company / Organization]`,
+      `[Your Phone Number]`,
+      `[Your Website or LinkedIn Profile]`,
+    ].join('\n')
+  );
+  window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+}
 
 /* ── Platform Logo SVGs ──────────────────────────────────────────── */
-
-
 function AndroidLogo({ size = 20, color = '#3DDC84' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -34,8 +73,6 @@ function AndroidLogo({ size = 20, color = '#3DDC84' }: { size?: number; color?: 
     </svg>
   );
 }
-
-
 function ReactLogo({ size = 20, color = '#61DAFB' }: { size?: number; color?: string }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" aria-hidden="true">
@@ -53,10 +90,7 @@ function ReactLogo({ size = 20, color = '#61DAFB' }: { size?: number; color?: st
   );
 }
 
-
 /* ── Brand Logos ──────────────────────────────────────────────────── */
-
-
 function WhatsAppLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -65,8 +99,6 @@ function WhatsAppLogo({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
-
-
 function LinkedInLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -75,8 +107,6 @@ function LinkedInLogo({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
-
-
 function GmailLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 24" aria-hidden="true">
@@ -88,8 +118,6 @@ function GmailLogo({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
-
-
 function PhoneLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -98,8 +126,6 @@ function PhoneLogo({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
-
-
 function GitHubLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -107,8 +133,6 @@ function GitHubLogo({ size = 24 }: { size?: number }) {
     </svg>
   );
 }
-
-
 function InstagramLogo({ size = 24 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 32 32" aria-hidden="true">
@@ -129,17 +153,12 @@ function InstagramLogo({ size = 24 }: { size?: number }) {
   );
 }
 
-
 /* ── Icon registries ─────────────────────────────────────────────── */
-
-
 const icons: Record<string, LucideIcon> = {
   code: Code2, layers: Layers3, orbit: Orbit, message: MessageSquare,
   list: ListChecks, pen: PenTool, arrow: ArrowUpRight, layout: LayoutGrid,
   sparkles: Sparkles, accessibility: Accessibility,
 };
-
-
 const archIcons: Record<string, LucideIcon> = {
   'Customer App': Smartphone, 'Partner App': Smartphone, 'Admin Panel': Monitor,
   'Admin Dashboard': Monitor, 'Backend API': Server, 'Backend Platform': Server,
@@ -154,20 +173,13 @@ const archIcons: Record<string, LucideIcon> = {
   'Seeker App': Smartphone, 'Employer App': Smartphone,
   'Cloudinary CDN': Globe, 'Socket.IO': Zap,
 };
-
-
 const navLinks = [
   ['Work', 'work'], ['Capabilities', 'capabilities'],
   ['Process', 'process'], ['About', 'about'],
 ];
-
-
 const personalProjects = projects.filter(p => !p.demo);
 
-
 /* ── Mobile detection hook ───────────────────────────────────────── */
-
-
 function useIsMobile(breakpoint = 768) {
   const [isMobile, setIsMobile] = useState(false);
   useEffect(() => {
@@ -179,10 +191,7 @@ function useIsMobile(breakpoint = 768) {
   return isMobile;
 }
 
-
 /* ── Touch-friendly ripple effect ────────────────────────────────── */
-
-
 function useTouchRipple(ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const el = ref.current;
@@ -199,10 +208,7 @@ function useTouchRipple(ref: RefObject<HTMLElement | null>) {
   }, [ref]);
 }
 
-
 /* ── Platform icon helper ────────────────────────────────────────── */
-
-
 function ProjectPlatformIcon({ project }: { project: Project }) {
   const cat = (project.category || '').toLowerCase();
   if (cat.includes('mobile') || cat.includes('app')) {
@@ -214,10 +220,7 @@ function ProjectPlatformIcon({ project }: { project: Project }) {
   return <Code2 size={18} strokeWidth={1.5} color={project.color} />;
 }
 
-
 /* ── Shared ──────────────────────────────────────────────────────── */
-
-
 function Heading({ children, className = '' }: { children: string; className?: string }) {
   return (
     <h2 className={className}>
@@ -230,10 +233,7 @@ function Heading({ children, className = '' }: { children: string; className?: s
   );
 }
 
-
 /* ── Animated section ────────────────────────────────────────────── */
-
-
 function AnimatedSection({
   children, delay = 0, className = '',
 }: { children: React.ReactNode; delay?: number; className?: string }) {
@@ -256,10 +256,7 @@ function AnimatedSection({
   );
 }
 
-
 /* ── Back to Top Button ──────────────────────────────────────────── */
-
-
 function BackToTop() {
   const [visible, setVisible] = useState(false);
   useEffect(() => {
@@ -299,10 +296,7 @@ function BackToTop() {
   );
 }
 
-
 /* ── Project detail sub-components ───────────────────────────────── */
-
-
 function ProjectStats({ stats }: { stats: ProjectStat[] }) {
   return (
     <div className="project-stats-grid">
@@ -320,7 +314,6 @@ function ProjectStats({ stats }: { stats: ProjectStat[] }) {
     </div>
   );
 }
-
 
 function ArchitectureDiagram({ architecture }: { architecture: ProjectArchitecture }) {
   const primary = architecture.nodes.filter(n => n.type === 'primary');
@@ -389,7 +382,6 @@ function ArchitectureDiagram({ architecture }: { architecture: ProjectArchitectu
   );
 }
 
-
 function FlowDiagram({ flow, index }: { flow: ProjectFlow; index: number }) {
   const steps = flow.steps || [];
   return (
@@ -416,7 +408,6 @@ function FlowDiagram({ flow, index }: { flow: ProjectFlow; index: number }) {
     </AnimatedSection>
   );
 }
-
 
 function FeatureGroupCard({ group, index }: { group: ProjectFeatureGroup; index: number }) {
   const Icon = icons[group.icon] || Code2;
@@ -447,7 +438,6 @@ function FeatureGroupCard({ group, index }: { group: ProjectFeatureGroup; index:
   );
 }
 
-
 function TechStackGrid({ techStack }: { techStack: ProjectTechCategory[] }) {
   return (
     <div className="tech-stack-grid">
@@ -471,10 +461,7 @@ function TechStackGrid({ techStack }: { techStack: ProjectTechCategory[] }) {
   );
 }
 
-
 /* ── Navbar — Mobile-first responsive ────────────────────────────── */
-
-
 function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -482,8 +469,6 @@ function Navbar() {
   const btnRef = useRef<HTMLButtonElement>(null);
   const hdrRef = useRef<HTMLElement>(null);
   const isMobile = useIsMobile();
-
-
   useEffect(() => {
     const onS = () => {
       setScrolled(window.scrollY > 60);
@@ -499,14 +484,10 @@ function Navbar() {
     document.querySelectorAll('main > section[id]').forEach(s => obs.observe(s));
     return () => { window.removeEventListener('scroll', onS); obs.disconnect(); };
   }, []);
-
-
   useEffect(() => {
     if (!open) return;
     const p = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
-
-    // Prevent iOS bounce scroll in mobile menu
     const preventScroll = (e: TouchEvent) => {
       const menu = document.getElementById('mobile-menu');
       if (menu && !menu.contains(e.target as Node)) {
@@ -514,7 +495,6 @@ function Navbar() {
       }
     };
     document.addEventListener('touchmove', preventScroll, { passive: false });
-
     hdrRef.current?.querySelector<HTMLAnchorElement>('#mobile-menu a')?.focus();
     const r = () => { if (window.innerWidth >= 1000) setOpen(false); };
     window.addEventListener('resize', r);
@@ -524,11 +504,7 @@ function Navbar() {
       document.removeEventListener('touchmove', preventScroll);
     };
   }, [open]);
-
-
   const nav = () => setOpen(false);
-
-
   function hk(e: KeyboardEvent<HTMLElement>) {
     if (!open) return;
     if (e.key === 'Escape') { setOpen(false); btnRef.current?.focus(); }
@@ -542,8 +518,6 @@ function Navbar() {
       }
     }
   }
-
-
   return (
     <>
       <header ref={hdrRef}
@@ -564,9 +538,9 @@ function Navbar() {
             <a className={active === id ? 'is-active' : ''} key={id} href={`#${id}`}>{l}</a>
           ))}
         </nav>
-        <a href="#contact" className="nav-cta">
+        <button className="nav-cta" onClick={openEmail}>
           {isMobile ? 'Talk' : "Let's talk"} <ArrowUpRight size={isMobile ? 14 : 16} />
-        </a>
+        </button>
         <button ref={btnRef} className="menu-toggle"
           aria-label={open ? 'Close menu' : 'Open menu'}
           aria-expanded={open} aria-controls="mobile-menu"
@@ -594,6 +568,28 @@ function Navbar() {
                 </a>
               )
             )}
+            <button
+              className="mobile-menu-cta"
+              onClick={() => { setOpen(false); openEmail(); }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '10px',
+                width: '100%',
+                padding: '16px 24px',
+                marginTop: '16px',
+                background: 'var(--accent, #54b978)',
+                color: '#000',
+                border: 'none',
+                borderRadius: '12px',
+                fontSize: '16px',
+                fontWeight: 600,
+                cursor: 'pointer',
+                WebkitTapHighlightColor: 'transparent',
+              }}>
+              Get in Touch <ArrowUpRight size={18} />
+            </button>
             <p>Thoughtful design. Carefully built.</p>
           </nav>
         )}
@@ -607,10 +603,7 @@ function Navbar() {
   );
 }
 
-
 /* ── Hero — Mobile-first responsive ──────────────────────────────── */
-
-
 function Hero() {
   const isMobile = useIsMobile();
   return (
@@ -648,10 +641,10 @@ function Hero() {
             style={isMobile ? { width: '100%', justifyContent: 'center' } : undefined}>
             Explore my work <ArrowDownRight size={19} />
           </a>
-          <a className="button button-dark" href="#contact"
+          <button className="button button-dark" onClick={openEmail}
             style={isMobile ? { width: '100%', justifyContent: 'center' } : undefined}>
-            Let's build something <ArrowUpRight size={19} />
-          </a>
+            Let's collaborate <ArrowUpRight size={19} />
+          </button>
         </div>
         <div className="hero-proof" data-reveal>
           <div className="proof-avatars" aria-hidden="true">
@@ -706,16 +699,11 @@ function Hero() {
   );
 }
 
-
 /* ── Project Card — Touch-optimized ──────────────────────────────── */
-
-
 function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Project) => void }) {
   const ref = useRef<HTMLButtonElement>(null);
   const [imgError, setImgError] = useState(false);
   const isMobile = useIsMobile();
-
-
   function mv(e: React.PointerEvent<HTMLButtonElement>) {
     if (e.pointerType !== 'mouse' ||
       !window.matchMedia('(min-width:1000px) and (pointer:fine) and (prefers-reduced-motion:no-preference)').matches)
@@ -730,8 +718,6 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
     ref.current?.style.setProperty('--tilt-x', '0deg');
     ref.current?.style.setProperty('--tilt-y', '0deg');
   }
-
-
   const hasMobilePreview = project.mobilePreview?.enabled;
   const labelText = project.demo ? 'ORIGINAL CONCEPT' : 'Client PROJECT';
   const placeholder = `data:image/svg+xml;utf8,${encodeURIComponent(
@@ -746,8 +732,6 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
       <text x='400' y='330' font-family='system-ui,sans-serif' font-size='14' fill='#9f9f9a' text-anchor='middle'>${project.category}</text>
     </svg>`
   )}`;
-
-
   return (
     <article className="project-item">
       <button ref={ref} data-project-trigger className="project-card"
@@ -789,10 +773,7 @@ function ProjectCard({ project, onOpen }: { project: Project; onOpen: (p: Projec
   );
 }
 
-
 /* ── Work — Responsive grid ──────────────────────────────────────── */
-
-
 function Work({ onOpen }: { onOpen: (p: Project) => void }) {
   const isMobile = useIsMobile();
   return (
@@ -816,10 +797,7 @@ function Work({ onOpen }: { onOpen: (p: Project) => void }) {
   );
 }
 
-
 /* ── Capabilities ────────────────────────────────────────────────── */
-
-
 function Capabilities() {
   return (
     <section id="capabilities" className="section container">
@@ -854,10 +832,7 @@ function Capabilities() {
   );
 }
 
-
 /* ── Process ─────────────────────────────────────────────────────── */
-
-
 function Process() {
   return (
     <section id="process" className="section process-section container">
@@ -885,10 +860,7 @@ function Process() {
   );
 }
 
-
 /* ── Testimonials ────────────────────────────────────────────────── */
-
-
 function Testimonials() {
   return (
     <section id="testimonials" className="section testimonials-section container">
@@ -938,21 +910,14 @@ function Testimonials() {
   );
 }
 
-
 /* ── About — Mobile optimized layout ─────────────────────────────── */
-
-
 function About() {
   const [src, setSrc] = useState(profile.portrait || '/images/profile.svg');
   const [err, setErr] = useState(false);
-
-
   useEffect(() => {
     setSrc(profile.portrait || '/images/profile.svg');
     setErr(false);
   }, []);
-
-
   function onE() {
     if (!err && src !== '/images/profile.svg') {
       setSrc('/images/profile.svg'); setErr(true); return;
@@ -961,8 +926,6 @@ function About() {
       `<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1100'><rect width='900' height='1100' fill='%23111'/><circle cx='450' cy='380' r='120' fill='%23242424'/><ellipse cx='450' cy='680' rx='160' ry='200' fill='%23242424'/><text x='450' y='980' fill='%239f9f9a' font-family='system-ui' font-size='32' text-anchor='middle'>${profile.name.split(' ')[0]}</text></svg>`
     ));
   }
-
-
   return (
     <section id="about" className="section about-section container">
       <div className="about-image" data-reveal>
@@ -1007,10 +970,7 @@ function About() {
   );
 }
 
-
 /* ── Expertise ───────────────────────────────────────────────────── */
-
-
 function Expertise() {
   return (
     <section id="expertise" className="section expertise-section container">
@@ -1059,20 +1019,13 @@ function Expertise() {
   );
 }
 
-
 /* ── Contact — Touch-optimized cards ─────────────────────────────── */
-
-
 function Contact({ onContact }: { onContact: () => void }) {
   const [copied, setCopied] = useState(false);
   const [cErr, setCErr] = useState('');
   const tmr = useRef<ReturnType<typeof setTimeout> | null>(null);
   const isMobile = useIsMobile();
-
-
   useEffect(() => () => { if (tmr.current) clearTimeout(tmr.current); }, []);
-
-
   async function cp() {
     try {
       await navigator.clipboard.writeText(profile.email);
@@ -1080,7 +1033,6 @@ function Contact({ onContact }: { onContact: () => void }) {
       if (tmr.current) clearTimeout(tmr.current);
       tmr.current = setTimeout(() => setCopied(false), 2500);
     } catch {
-      // On mobile, clipboard API may fail — fallback to mailto
       if (isMobile) {
         window.location.href = `mailto:${profile.email}`;
         return;
@@ -1090,8 +1042,6 @@ function Contact({ onContact }: { onContact: () => void }) {
       tmr.current = setTimeout(() => setCErr(''), 3500);
     }
   }
-
-
   return (
     <section id="contact" className="section contact-section container">
       <div className="contact-cross" aria-hidden="true"><Plus size={30} strokeWidth={1} /></div>
@@ -1170,10 +1120,7 @@ function Contact({ onContact }: { onContact: () => void }) {
   );
 }
 
-
 /* ── Footer — Mobile responsive ──────────────────────────────────── */
-
-
 function Footer() {
   const [time, setTime] = useState('');
   const isMobile = useIsMobile();
@@ -1185,13 +1132,9 @@ function Footer() {
     const t = setInterval(u, 30_000);
     return () => clearInterval(t);
   }, []);
-
-
   const strip = credentials.length
     ? credentials.map(c => ({ title: c.title, url: c.url }))
     : disciplines.map(t => ({ title: t, url: undefined }));
-
-
   return (
     <footer className="site-footer"
       style={{ paddingBottom: 'calc(env(safe-area-inset-bottom, 0px) + 16px)' }}>
@@ -1250,10 +1193,7 @@ function Footer() {
   );
 }
 
-
 /* ── 404 Page — Mobile responsive ────────────────────────────────── */
-
-
 function NotFoundPage({ onBack }: { onBack: () => void }) {
   const isMobile = useIsMobile();
   useEffect(() => {
@@ -1306,10 +1246,7 @@ function NotFoundPage({ onBack }: { onBack: () => void }) {
   );
 }
 
-
 /* ── Dialogs — Mobile-optimized ──────────────────────────────────── */
-
-
 function useNativeDialog(
   ref: RefObject<HTMLDialogElement | null>, open: boolean, onClose: () => void
 ) {
@@ -1330,7 +1267,6 @@ function useNativeDialog(
     };
   }, [ref, open, onClose]);
 }
-
 
 function ProjectDialog({ project, onClose }: { project: Project; onClose: () => void }) {
   const dlgRef = useRef<HTMLDialogElement>(null);
@@ -1534,10 +1470,7 @@ function ProjectDialog({ project, onClose }: { project: Project; onClose: () => 
   );
 }
 
-
 /* ── Contact Dialog — Mobile-optimized ───────────────────────────── */
-
-
 function ContactDialog({ onClose }: { onClose: () => void }) {
   const dlgRef = useRef<HTMLDialogElement>(null);
   const [status, setStatus] = useState<{ type: 'error' | 'success' | ''; msg: string }>({
@@ -1546,34 +1479,38 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
   const [submitting, setSubmitting] = useState(false);
   const isMobile = useIsMobile();
   useNativeDialog(dlgRef, true, onClose);
-
-
   function validateEmail(email: string): boolean {
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
-
-
   function sub(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const d = new FormData(e.currentTarget);
     const n = String(d.get('name') || '').trim();
     const em = String(d.get('email') || '').trim();
     const m = String(d.get('message') || '').trim();
-
-
     if (!n) { setStatus({ type: 'error', msg: 'Please enter your name.' }); return; }
     if (n.length < 2) { setStatus({ type: 'error', msg: 'Name must be at least 2 characters.' }); return; }
     if (!em) { setStatus({ type: 'error', msg: 'Please enter your email address.' }); return; }
     if (!validateEmail(em)) { setStatus({ type: 'error', msg: 'Please enter a valid email address.' }); return; }
     if (!m) { setStatus({ type: 'error', msg: 'Please tell me about your project idea.' }); return; }
     if (m.length < 10) { setStatus({ type: 'error', msg: 'Please add more detail (at least 10 characters).' }); return; }
-
-
     setSubmitting(true);
-    const b = `Project enquiry\n\nFrom: ${n}\nEmail: ${em}\n\n${m}`;
+    const b = [
+      `Project Inquiry — via ${profile.name}'s Portfolio`,
+      ``,
+      `From: ${n}`,
+      `Email: ${em}`,
+      `Date: ${new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}`,
+      ``,
+      `— Message —`,
+      m,
+      ``,
+      `---`,
+      `This inquiry was sent via the portfolio contact form.`,
+    ].join('\n');
     try {
       window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(
-        `Project enquiry from ${n}`
+        `Project Inquiry from ${n}`
       )}&body=${encodeURIComponent(b)}`;
       setStatus({ type: 'success', msg: 'Email draft ready. Check your mail client to send it.' });
     } catch {
@@ -1585,8 +1522,6 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
       setSubmitting(false);
     }
   }
-
-
   return (
     <dialog ref={dlgRef} className="contact-dialog"
       aria-labelledby="contact-dialog-title"
@@ -1674,10 +1609,7 @@ function ContactDialog({ onClose }: { onClose: () => void }) {
   );
 }
 
-
 /* ── Portfolio Home ──────────────────────────────────────────────── */
-
-
 function PortfolioHome({
   onOpenProject, onContact,
 }: { onOpenProject: (p: Project) => void; onContact: () => void }) {
@@ -1705,12 +1637,8 @@ function PortfolioHome({
   );
 }
 
-
 /* ── App with Hash Router + 404 ──────────────────────────────────── */
-
-
 type PageType = 'home' | 'mobile-preview' | 'not-found';
-
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageType>('home');
@@ -1718,10 +1646,8 @@ export default function App() {
   const [selProject, setSelProject] = useState<Project | null>(null);
   const [contactOpen, setContactOpen] = useState(false);
 
-
   /* ── Viewport meta for mobile ────────────────────────────── */
   useEffect(() => {
-    // Ensure viewport meta is set correctly for mobile
     let meta = document.querySelector('meta[name="viewport"]') as HTMLMetaElement | null;
     if (!meta) {
       meta = document.createElement('meta');
@@ -1729,8 +1655,6 @@ export default function App() {
       document.head.appendChild(meta);
     }
     meta.content = 'width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=5';
-
-    // Set theme color for mobile browsers
     let theme = document.querySelector('meta[name="theme-color"]') as HTMLMetaElement | null;
     if (!theme) {
       theme = document.createElement('meta');
@@ -1740,18 +1664,15 @@ export default function App() {
     theme.content = '#060608';
   }, []);
 
-
   /* ── Hash-based routing with 404 detection ───────────────── */
   useEffect(() => {
     function handleHash() {
       const hash = window.location.hash;
-
       if (!hash || hash === '#' || hash === '#home') {
         setCurrentPage('home');
         setPreviewProject(null);
         return;
       }
-
       const projectMatch = hash.match(/^#\/project\/(.+)$/);
       if (projectMatch) {
         const projectId = projectMatch[1];
@@ -1766,7 +1687,6 @@ export default function App() {
         setPreviewProject(null);
         return;
       }
-
       const knownAnchors = ['home', 'work', 'capabilities', 'process',
         'testimonials', 'about', 'expertise', 'contact'];
       const anchor = hash.replace('#', '');
@@ -1775,22 +1695,18 @@ export default function App() {
         setPreviewProject(null);
         return;
       }
-
       if (hash.startsWith('#/')) {
         setCurrentPage('not-found');
         setPreviewProject(null);
         return;
       }
-
       setCurrentPage('home');
       setPreviewProject(null);
     }
-
     handleHash();
     window.addEventListener('hashchange', handleHash);
     return () => window.removeEventListener('hashchange', handleHash);
   }, []);
-
 
   /* ── Page title management ────────────────────────────────── */
   useEffect(() => {
@@ -1803,7 +1719,6 @@ export default function App() {
     }
   }, [currentPage, previewProject]);
 
-
   const handleOpenProject = useCallback((project: Project) => {
     if (project.mobilePreview?.enabled) {
       window.location.hash = `/project/${project.id}`;
@@ -1812,29 +1727,22 @@ export default function App() {
     }
   }, []);
 
-
   const handleBackToHome = useCallback(() => {
     window.location.hash = '';
     setCurrentPage('home');
     setPreviewProject(null);
   }, []);
 
-
   const closePrj = useCallback(() => setSelProject(null), []);
   const closeCtc = useCallback(() => setContactOpen(false), []);
 
-
   /* ── Render ────────────────────────────────────────────────── */
-
-
   if (currentPage === 'not-found') {
     return <NotFoundPage onBack={handleBackToHome} />;
   }
-
   if (currentPage === 'mobile-preview' && previewProject) {
     return <MobilePreviewPage project={previewProject} onBack={handleBackToHome} />;
   }
-
   return (
     <>
       <PortfolioHome onOpenProject={handleOpenProject}
