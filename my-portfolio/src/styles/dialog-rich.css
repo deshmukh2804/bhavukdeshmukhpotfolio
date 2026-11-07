@@ -764,3 +764,104 @@
 .feature-group-card ul:empty + .feature-expand {
   display: none;
 }
+
+/* ── Responsive Adaptations ──────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .project-deep-dive {
+    margin-top: 28px;
+    gap: 36px;
+  }
+
+  .project-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+
+  .project-stat-card {
+    padding: 16px 12px;
+  }
+
+  .stat-value {
+    font-size: 24px;
+  }
+
+  .stat-label {
+    font-size: 11px;
+  }
+
+  .feature-groups-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .feature-group-card {
+    padding: 18px 16px;
+  }
+
+  .arch-diagram {
+    padding: 18px 14px;
+    border-radius: 14px;
+  }
+
+  .arch-nodes {
+    gap: 8px;
+  }
+
+  .arch-node {
+    padding: 8px 12px;
+    font-size: 11px;
+    white-space: normal;
+  }
+
+  .arch-legend {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .project-flow {
+    padding: 18px 16px;
+  }
+
+  .flow-step-number {
+    width: 24px;
+    height: 24px;
+    font-size: 9px;
+  }
+
+  .flow-step-content strong {
+    font-size: 12px;
+  }
+
+  .flow-step-content span {
+    font-size: 11px;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+    gap: 10px;
+  }
+
+  .tech-category {
+    padding: 14px;
+  }
+
+  .client-value-section {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 420px) {
+  .project-stats-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .arch-diagram {
+    padding: 14px 10px;
+  }
+
+  .arch-node {
+    width: 100%;
+    justify-content: center;
+  }
+}

@@ -3,7 +3,7 @@ import { useEffect, useRef, useState, useCallback } from 'react';
 import type { CSSProperties, FormEvent, KeyboardEvent, RefObject } from 'react';
 import {
   Accessibility, ArrowDown, ArrowDownRight, ArrowRight, ArrowUpRight,
-  Check, CheckCheck, Code2, Copy, Download, Layers3, LayoutGrid,
+  Check, CheckCheck, Code2, Copy, Layers3, LayoutGrid,
   ListChecks, Mail, Menu, MessageSquare, Orbit, PenTool, Plus,
   Sparkles, X, Server, Database, Zap, Shield, Smartphone, Monitor,
   Globe, Activity, BarChart3, TrendingUp, Users, Settings, CreditCard,
@@ -192,7 +192,7 @@ function useIsMobile(breakpoint = 768) {
 }
 
 /* ── Touch-friendly ripple effect ────────────────────────────────── */
-function useTouchRipple(ref: RefObject<HTMLElement | null>) {
+export function useTouchRipple(ref: RefObject<HTMLElement | null>) {
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
@@ -674,9 +674,7 @@ function Hero() {
           </div>
         )}
       </div>
-      {!isMobile && (
-        <>
-          <div className="hero-object object-code" data-depth="9" aria-hidden="true">
+      <div className="hero-object object-code" data-depth="9" aria-hidden="true">
             <div className="floating-inner">
               <span className="object-small-cross"><Plus size={16} /></span>
               <div className="code-tile"><Code2 size={50} strokeWidth={1.2} /></div>
@@ -689,8 +687,6 @@ function Hero() {
               <span className="orbit-spark"><Plus size={18} strokeWidth={1} /></span>
             </div>
           </div>
-        </>
-      )}
       <a href="#work" className="scroll-cue" aria-label="Scroll to selected work"
         style={isMobile ? { bottom: 'calc(env(safe-area-inset-bottom, 0px) + 20px)' } : undefined}>
         <span>{isMobile ? 'SCROLL' : 'SCROLL TO EXPLORE'}</span><ArrowDown size={15} />

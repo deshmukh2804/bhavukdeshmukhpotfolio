@@ -70,7 +70,7 @@ export interface ProjectStat {
 export interface ProjectFlowStep {
   label: string;
   description?: string;
-  status?: 'pending' | 'active' | 'done' | 'completed';
+  status?: 'pending' | 'active' | 'done' | 'completed' | 'complete';
 }
 
 export interface ProjectFlow {

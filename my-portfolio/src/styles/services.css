@@ -132,4 +132,40 @@
 
 .service-card li svg {
   color: var(--accent);
+  flex-shrink: 0;
+}
+
+/* ── Responsive Adaptations ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .service-card {
+    padding: 22px 18px;
+  }
+
+  .service-visual {
+    height: 120px;
+    margin-bottom: 20px;
+  }
+
+  .service-icon {
+    width: 76px;
+    height: 76px;
+    border-radius: 16px;
+  }
+
+  .service-card h3 {
+    font-size: 20px;
+  }
 }

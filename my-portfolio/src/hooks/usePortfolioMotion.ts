@@ -174,8 +174,11 @@ export function usePortfolioMotion(scope: RefObject<HTMLElement | null>) {
 
     let active = true;
     document.fonts?.ready.then(() => { if (active) ScrollTrigger.refresh(); });
+    const handleResize = () => { if (active) ScrollTrigger.refresh(); };
+    window.addEventListener('resize', handleResize, { passive: true });
     return () => {
       active = false;
+      window.removeEventListener('resize', handleResize);
       ambientObserver.disconnect();
       document.removeEventListener('visibilitychange', updateVisibility);
       root.classList.remove('is-page-hidden');

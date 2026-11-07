@@ -8,6 +8,7 @@
   padding-top: 117px;
   padding-bottom: 120px;
   position: relative;
+  overflow: hidden;
 }
 
 .contact-section::before {
@@ -20,6 +21,7 @@
     linear-gradient(90deg, #ffffff04 1px, transparent 1px);
   background-size: 64px 64px;
   mask-image: radial-gradient(ellipse at center, #000, transparent 68%);
+  -webkit-mask-image: radial-gradient(ellipse at center, #000, transparent 68%);
 }
 
 .contact-cross {
@@ -148,19 +150,70 @@
 .contact-email > a {
   font-size: 12px;
   color: #b1b6a8;
+  word-break: break-all;
 }
 
 .contact-email button {
-  width: 36px;
-  height: 36px;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   border-radius: 7px;
   background: #151515;
   color: var(--muted);
   display: grid;
   place-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  cursor: pointer;
+  transition: background .2s, color .2s;
+}
+
+.contact-email button:hover {
+  background: #202020;
+  color: var(--text);
 }
 
 .contact-email > span {
   font-size: 10px;
   color: var(--accent);
+}
+
+/* ── Responsive Adaptations ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .contact-premium-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .contact-section {
+    padding-top: 70px;
+    padding-bottom: 70px;
+  }
+
+  .contact-premium-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    margin-bottom: 36px;
+  }
+
+  .contact-premium-card {
+    padding: 22px 18px;
+  }
+
+  .contact-section h2 {
+    font-size: clamp(2rem, 7.5vw, 3.2rem);
+  }
+
+  .contact-description {
+    font-size: 14px;
+    margin-bottom: 32px;
+  }
+
+  .contact-button {
+    width: 100%;
+    min-width: unset;
+  }
 }

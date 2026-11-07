@@ -63,12 +63,14 @@
   place-items: center;
   box-shadow: 4px 8px 0 #1b221a, 7px 19px 25px #0005;
   z-index: 2;
+  transition: transform .3s var(--ease);
 }
 
 /* ── About Copy ──────────────────────────────────────────────── */
 
 .about-copy h2 {
   font-size: clamp(2rem, 3.5vw + 1rem, 3.5rem);
+  letter-spacing: -0.02em;
 }
 
 .about-copy > p {
@@ -128,4 +130,84 @@
 
 .social-links a:hover {
   color: var(--accent);
+}
+
+/* ── Responsive Adaptations ──────────────────────────────────── */
+
+@media (max-width: 1024px) {
+  .about-section {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding-top: 80px;
+  }
+
+  .about-image {
+    max-width: 520px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .about-floating {
+    right: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    gap: 36px;
+    padding-top: 60px;
+  }
+
+  .about-image {
+    max-width: 100%;
+  }
+
+  .about-floating {
+    top: 18px;
+    right: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+  }
+
+  .about-floating svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .about-copy h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .about-signature {
+    margin-top: 18px;
+    margin-bottom: 20px;
+    gap: 12px;
+  }
+
+  .social-links {
+    gap: 14px 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portrait-caption {
+    bottom: 12px;
+    left: 12px;
+    padding: 8px 10px;
+    font-size: 7.5px;
+  }
+
+  .about-floating {
+    top: 12px;
+    right: 10px;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+  }
+
+  .about-floating svg {
+    width: 24px;
+    height: 24px;
+  }
 }

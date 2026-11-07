@@ -66,3 +66,69 @@
 .section-side-note > span:last-child svg {
   width: 12px;
 }
+
+/* ── Responsive Layout Adaptations ───────────────────────────── */
+
+@media (max-width: 1024px) {
+  .container {
+    width: min(calc(100% - 48px), 1420px);
+  }
+
+  .container-wide {
+    width: min(calc(100% - 40px), 1640px);
+  }
+
+  .section {
+    padding-block: 80px;
+  }
+
+  .section-heading {
+    gap: 24px;
+    margin-bottom: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+  }
+
+  .container-wide {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+  }
+
+  .section {
+    padding-block: 64px;
+  }
+
+  .section-heading {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    margin-bottom: 28px;
+  }
+
+  .section-heading > p {
+    max-width: 100%;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+}
+
+@media (max-width: 380px) {
+  .container {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+  }
+
+  .container-wide {
+    width: calc(100% - 24px);
+    max-width: calc(100% - 24px);
+  }
+
+  .section {
+    padding-block: 52px;
+  }
+}

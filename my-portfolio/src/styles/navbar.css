@@ -20,6 +20,7 @@
   border-radius: 12px;
   box-shadow: 0 12px 36px #00000045, inset 0 1px #ffffff08;
   backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   transition: height .25s, top .25s, border-color .3s, box-shadow .3s;
 }
 
@@ -155,6 +156,9 @@
   font-size: 11px;
   font-weight: 600;
   border-radius: 7px;
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
   transition: transform .25s var(--ease), background .25s, border-color .25s, box-shadow .25s;
 }
 
@@ -177,11 +181,29 @@
 
 .menu-toggle {
   display: none;
-  background: none;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
   width: 44px;
   height: 44px;
+  min-width: 44px;
+  min-height: 44px;
   align-items: center;
   justify-content: center;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0;
+  transition: background .2s, border-color .2s;
+}
+
+.menu-toggle:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
 
 /* ── Mobile Menu ─────────────────────────────────────────────── */
@@ -201,38 +223,155 @@
   border-top: 0;
   border-radius: 0 0 12px 12px;
   padding: 19px 25px 24px;
-  max-height: calc(100dvh - 100px);
+  max-height: calc(100dvh - 90px);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
 #mobile-menu a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 27px;
+  font-size: 24px;
   border-bottom: 1px solid #ffffff10;
   padding: 15px 0;
   letter-spacing: -.035em;
+  color: var(--text);
+  min-height: 48px;
   animation: menu-in .4s var(--ease) both;
-  animation-delay: calc(var(--menu-index) * 40ms);
+  animation-delay: calc(var(--menu-index, 0) * 40ms);
 }
 
-#mobile-menu a:hover {
+#mobile-menu a:hover,
+#mobile-menu a:focus-visible {
   color: var(--accent);
 }
 
 #mobile-menu a svg {
   color: #9fa791;
+  transition: transform .2s ease, color .2s ease;
+}
+
+#mobile-menu a:hover svg {
+  color: var(--accent);
+  transform: translate(2px, -2px);
 }
 
 #mobile-menu > p {
   margin-top: 25px;
   font-size: 11px;
+  color: var(--muted);
 }
 
 .menu-backdrop {
   position: fixed;
   inset: 0;
   z-index: 99;
-  background: #000b;
+  background: rgba(0, 0, 0, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: backdrop-in .25s ease both;
+}
+
+/* ── Responsive Header Breakpoints ───────────────────────────── */
+
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none !important;
+  }
+
+  .menu-toggle {
+    display: flex !important;
+  }
+
+  .site-header {
+    width: min(calc(100% - 48px), 1360px);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-header {
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    height: 60px;
+    top: 12px;
+    padding: 8px 12px;
+    border-radius: 10px;
+  }
+
+  .site-header.is-scrolled {
+    height: 56px;
+    top: 8px;
+  }
+
+  .brand-mark {
+    width: 36px;
+    height: 36px;
+  }
+
+  .brand-copy strong {
+    font-size: 13px;
+  }
+
+  .nav-cta {
+    padding: 8px 12px;
+    gap: 8px;
+    font-size: 11px;
+  }
+
+  #mobile-menu {
+    padding: 16px 20px 24px;
+  }
+
+  #mobile-menu a {
+    font-size: 20px;
+    padding: 13px 0;
+  }
+}
+
+@media (max-width: 380px) {
+  .site-header {
+    width: calc(100% - 20px);
+    max-width: calc(100% - 20px);
+    padding: 6px 10px;
+    top: 6px;
+    height: 54px;
+  }
+
+  .site-header.is-scrolled {
+    height: 50px;
+    top: 4px;
+  }
+
+  .brand-mark {
+    width: 32px;
+    height: 32px;
+  }
+
+  .brand-copy strong {
+    font-size: 12px;
+  }
+
+  .nav-cta {
+    padding: 6px 10px;
+    gap: 6px;
+    font-size: 10px;
+  }
+
+  .menu-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+  }
+
+  #mobile-menu {
+    padding: 14px 16px 20px;
+  }
+
+  #mobile-menu a {
+    font-size: 18px;
+    padding: 11px 0;
+  }
 }
